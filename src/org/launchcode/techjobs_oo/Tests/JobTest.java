@@ -90,7 +90,7 @@ public class JobTest {
 
     @Test
     public void testJobRecognizesEmptyField() {
-        Job emptyJobField = new Job("", new Employer(), new Location("Desert"),
+        Job emptyJobField = new Job(null, new Employer(""), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertTrue(emptyJobField.toString().contains("Data not available"));
