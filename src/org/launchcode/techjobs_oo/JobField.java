@@ -2,7 +2,9 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
-public abstract class JobField {
+
+// Employer, Location, CoreCompetency, and PositionType had most of their fields in common
+public abstract class JobField { //class is abstract because there would never be a standalone "jobfield" object
     private int id;
     private static int nextId = 1;
     private String value;
@@ -15,7 +17,7 @@ public abstract class JobField {
     public JobField(String value) {
         this();
         this.value = value;
-    }
+    } //this is what super connects to
 
     @Override
     public String toString() {

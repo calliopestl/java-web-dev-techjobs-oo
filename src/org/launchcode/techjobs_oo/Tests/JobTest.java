@@ -31,6 +31,7 @@ public class JobTest {
         assertFalse(testJob.getId() == testJob2.getId());
         assertTrue(testJob2.getId() == testJob.getId() + 1);
     }
+    // compares the id values returned, false if they are the same, true if they differ by 1
 
 
     @Test
@@ -48,6 +49,8 @@ public class JobTest {
 
 
     }
+    // instanceof makes sure they are in the right class; assertEquals compares the expected field value to the actual,
+    // calls toString() because it's being compared to a String
 
     @Test
     public void testJobsForEquality() {
@@ -55,12 +58,15 @@ public class JobTest {
 
     }
 
+    //makes sure each gets a unique id, and that it's the only field that doesn't match
+
    @Test
     public void testJobInformationIsBookendedByBlankLines() {
 
         assertTrue(testJobFields.toString().startsWith("\n"));
        assertTrue(testJobFields.toString().endsWith("\n"));
    }
+//\n starts a new line, so it will print out a blank line. This checks that it is the first and last 'character'
 
    @Test
     public void testJobPrintsLabelsAndValues() {
@@ -76,6 +82,14 @@ public class JobTest {
       for (int i=0; i<valueArray.length; i++) {
           assertTrue(splitJobFields[i].endsWith(valueArray[i]));
       }
+    // splitJobFields makes testJobFields a string, then takes out the beginning and ending blank lines so they don't effect the indices,
+       // and splits each field onto a new line
+       // the for loop loops over each line in the split up jobFields and makes sure that it starts with a matching
+       // String to the Strings in the label Array
+
+       // the value Array takes all the field values and coverts them to strings for comparison. Then the for loop
+       // loops over each line in the split up jobFields, looks at the ending Strings, and matches them with the valueArray
+
 
        // assertTrue(splitJobFields[0].endsWith(Integer.toString(testJobFields.getId()));
        // assertTrue(splitJobFields[1].endsWith(testJobFields.getName()));
@@ -93,8 +107,10 @@ public class JobTest {
 
         assertTrue(emptyJobField.toString().contains("Data not available"));
 
-      //  assertEquals("Data not available", emptyJobField.getName().toString());
-        //assertEquals("Data not available", emptyJobField.getEmployer().toString());
+        // tested how this printed with both null and empty string values
+        //this test makes sure that an empty field generates "data not available" somewhere in the returned String
+        // QUESTION: I could not figure out a way to test the specific fields that were empty, just that the entire thing
+        // would contain the String- is there a way to get more specific?
 
     }
 

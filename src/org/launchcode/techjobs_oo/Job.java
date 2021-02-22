@@ -18,7 +18,7 @@ public class Job {
     //  the 'id' field.
     public Job() {
         id = nextId;
-        nextId++;
+        nextId++; //increments the id by 1
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
