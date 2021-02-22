@@ -35,10 +35,11 @@ public class Job {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Job job = (Job) o;
-        return id == job.id;
+        if (this == o) return true; //if they are already identical (the exact same), the rest of this doesn't need to be done
+        if (o == null || getClass() != o.getClass()) return false; //to prevent an error, makes sure compared objects are created from the
+        // same class and makes sure there is a value being compared
+        Job job = (Job) o; // cast input to be the same type
+        return id == job.id; // cites the field that will determine if it's equal
     }
 
     @Override

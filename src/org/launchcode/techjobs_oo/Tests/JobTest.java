@@ -23,10 +23,8 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
         testJobFields2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    }
-    public void createJobHashMaps() {
-        HashMap<String, String> jobFields = new HashMap<>();
-    }
+    } //before annotation allows these to be used for all of the tests
+
 
     @Test
     public void testSettingJobId() {
